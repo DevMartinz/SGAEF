@@ -2,10 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\StudentsController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [HomePageController::class,"index"])->name('home_page');
-Route::get('/student', [HomePageController::class,"student"])->name('student');
+Route::get('/students', [HomePageController::class,"index"])->name('students');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+Route::get('/login', [App\Http\Controllers\Auth\LoginController::class,"login"])->name('login');
+Route::get('/{students:slug}',[App\Http\Controllers\StudentsController::class,"get"])->name('students.open');
 
 Route::middleware(['auth'])->group(function () {
   Route::get('/students/list', [StudentsController::class,"list"])->name('students.list');
@@ -16,7 +21,4 @@ Route::middleware(['auth'])->group(function () {
   Route::delete('/students/{students}', [StudentsController::class,"destroy"])->name('students.destroy');
 });
 
-
 Auth::routes();
-
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');

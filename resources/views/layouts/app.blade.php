@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -86,7 +88,24 @@
         </nav>
 
         <main class="py-4">
+
+        @if (session('success'))
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="alert alert-success" role="alert">
+                            {{session('success')}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            @endif
+
             @yield('content')
+
+            @include('layouts.modal-deletar')
+
         </main>
     </div>
 </body>
