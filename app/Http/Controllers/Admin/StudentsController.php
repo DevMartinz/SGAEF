@@ -16,7 +16,7 @@ class StudentsController extends Controller
             if (isset($request->cpf))
                 $pagination->where("cpf","like","%$request->cpf%");
             if (isset($request->class))
-                $pagination->where("class",$request->class);
+                $pagination->where("class","like","%$request->class%");
     
             #$pagination->dd();
             #$pagination->dump();

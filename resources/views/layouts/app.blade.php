@@ -58,10 +58,10 @@
                             <a class="nav-link" href="{{ route('students.list') }}">{{ __('Alunos') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('students.list') }}">{{ __('Professores') }}</a>
+                            <a class="nav-link" href="{{ route('teacher.list') }}">{{ __('Professores') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('students.list') }}">{{ __('Funcionários') }}</a>
+                            <a class="nav-link" href="{{ route('employees.list') }}">{{ __('Funcionários') }}</a>
                         </li>
 
                             <li class="nav-item dropdown">

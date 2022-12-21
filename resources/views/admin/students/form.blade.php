@@ -73,7 +73,7 @@
                                 <input id="city" type="text" class="form-control @error('city') is-invalid @enderror"
                                         name="city" value="{{ old('city', $data->city) }}"  autofocus>
 
-                                @error('name')
+                                @error('city')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -120,7 +120,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                        </form>
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
