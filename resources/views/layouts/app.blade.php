@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'SGAEF') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!--<script src="{{ asset('js/app.js') }}" defer></script>-->
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('js/main.js') }}"></script>
 
@@ -58,7 +58,7 @@
                             <a class="nav-link" href="{{ route('students.list') }}">{{ __('Alunos') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('teacher.list') }}">{{ __('Professores') }}</a>
+                            <a class="nav-link" href="{{ route('teachers.list') }}">{{ __('Professores') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('employees.list') }}">{{ __('Funcionários') }}</a>
