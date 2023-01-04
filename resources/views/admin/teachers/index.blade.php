@@ -18,30 +18,30 @@
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nome do Professor:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control"
-                                        name="name" value="{{ old('name') }}" autofocus>
+                                <input id="t_name" type="text" class="form-control"
+                                        name="t_name" value="{{ old('t_name') }}" autofocus>
                             </div>
                         </div>
 
 
 
                         <div class="row mb-3">
-                            <label for="cpf" class="col-md-4 col-form-label text-md-end">{{ __('CPF do Professor:') }}</label>
+                            <label for="t_cpf" class="col-md-4 col-form-label text-md-end">{{ __('CPF do Professor:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control"
-                                        name="cpf" value="{{ old('cpf') }}">
+                                <input id="t_cpf" type="text" class="form-control"
+                                        name="t_cpf" value="{{ old('t_cpf') }}">
                             </div>
                         </div>
 
 
 
                         <div class="row mb-3">
-                            <label for="s_subjects" class="col-md-4 col-form-label text-md-end">{{ __('Disciplina do Professor:') }}</label>
+                            <label for="t_s_subjects" class="col-md-4 col-form-label text-md-end">{{ __('Disciplina do Professor:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="s_subjects" type="text" class="form-control"
-                                        name="s_subjects" value="{{ old('s_subjects') }}">
+                                <input id="t_s_subjects" type="text" class="form-control"
+                                        name="t_s_subjects" value="{{ old('t_s_subjects') }}">
                             </div>
                         </div>
 
@@ -80,9 +80,9 @@
                                         {{ __('Edit') }}
                                     </a>
                                 </th>
-                                <td>{{$item->name}}</td>
-                                <td>{{$item->cpf}}</td>
-                                <td>{{$item->s_subjects}}</td>
+                                <td>{{$item->t_name}}</td>
+                                <td>{{$item->t_cpf}}</td>
+                                <td>{{$item->t_s_subjects}}</td>
                                 <td>
                                     <form action="{{route('teachers.destroy',$item)}}" method="post">
                                         @csrf

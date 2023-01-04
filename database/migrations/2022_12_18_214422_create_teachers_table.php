@@ -16,12 +16,12 @@ class CreateTeachersTable extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("name",250);
-            $table->string("cpf",11);
-            $table->string("rg",10);
-            $table->string("city",60);
-            $table->string("address",250);
-            $table->string("s_subjects",80);
+            $table->string("t_name",250);
+            $table->string("t_cpf",11);
+            $table->string("t_rg",10);
+            $table->string("t_city",60);
+            $table->string("t_address",250);
+            $table->string("t_s_subjects",80);
             $table->softDeletes();
         });
     }

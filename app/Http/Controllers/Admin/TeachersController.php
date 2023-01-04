@@ -8,15 +8,18 @@ use Illuminate\Support\Facades\Validator;
 
 class TeachersController extends Controller
 {
+    public function home(Teachers $teachers){
+        return view("admin.teachers.home");
+      }
     public function list(Request $request){
         $pagination = Teachers::orderBy("name");
 
         if (isset($request->name))
-            $pagination->where("name","like","%$request->name%");
+            $pagination->where("t_name","like","%$request->t_name%");
         if (isset($request->cpf))
-            $pagination->where("cpf","like","%$request->cpf%");
+            $pagination->where("t_cpf","like","%$request->t_cpf%");
         if (isset($request->class))
-            $pagination->where("class","like","%$request->class%");
+            $pagination->where("t_class","like","%$request->t_class%");
 
         #$pagination->dd();
         #$pagination->dump();
@@ -31,12 +34,12 @@ class TeachersController extends Controller
     public function validator(Request $request){
 
         $rules = [
-            'name' => 'required|max:250',
-            'cpf' => 'required|max:11',
-            'rg' => 'required|max:10',
-            'city' => 'required|max:60',
-            'address' => 'required|max:250',
-            's_subjects' => 'required|max:80',
+            't_name' => 'required|max:250',
+            't_cpf' => 'required|max:11',
+            't_rg' => 'required|max:10',
+            't_city' => 'required|max:60',
+            't_address' => 'required|max:250',
+            't_s_subjects' => 'required|max:80',
         ];
 
         return Validator::make($request->all(), $rules);
@@ -70,6 +73,15 @@ class TeachersController extends Controller
         $teachers->update($data);
         return redirect()->back()->with("success",__("Data updated!"));
     }
+    
+    public function missing_school(Teachers $teachers){
+        return view("admin.teachers.missing_school");
+      }   
 
-       
+    public function school_subject(Teachers $teachers){
+        return view("admin.teachers.school_subject");
+      }   
+    public function grades(Teachers $teachers){
+        return view("admin.teachers.grades");
+      }  
 }

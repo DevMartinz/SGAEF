@@ -6,17 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-
-class Teachers extends Model
+class Secretaries extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
     protected $fillable = [
-        "t_name",
-        "t_cpf",
-        "t_rg",
-        "t_city",
-        "t_address",
-        "t_s_subjects"
+        "sec_name",
+        "sec_cpf",
+        "sec_rg",
+        "sec_city",
+        "sec_address",
+        "sec_permi_lvl"
 ];
-
 }

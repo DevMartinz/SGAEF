@@ -5,43 +5,43 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Alunos') }}</div>
+                <div class="card-header">{{ __('Diretores') }}</div>
 
                 <div class="card-body">
 
-                    <form method="GET" action="{{ route('students.list') }}">
+                    <form method="GET" action="{{ route('principals.list') }}">
                         @csrf
 
 
 
                         <div class="row mb-3">
-                            <label for="std_name" class="col-md-4 col-form-label text-md-end">{{ __('Nome do Aluno:') }}</label>
+                            <label for="p_name" class="col-md-4 col-form-label text-md-end">{{ __('Nome do Diretor:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="std_name" type="text" class="form-control"
-                                        name="std_name" value="{{ old('std_name') }}" autofocus>
+                                <input id="p_name" type="text" class="form-control"
+                                        name="p_name" value="{{ old('p_name') }}" autofocus>
                             </div>
                         </div>
 
 
 
                         <div class="row mb-3">
-                            <label for="std_cpf" class="col-md-4 col-form-label text-md-end">{{ __('CPF do Aluno:') }}</label>
+                            <label for="p_cpf" class="col-md-4 col-form-label text-md-end">{{ __('CPF do Diretor:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="std_cpf" type="text" class="form-control"
-                                        name="std_cpf" value="{{ old('std_cpf') }}">
+                                <input id="p_cpf" type="text" class="form-control"
+                                        name="p_cpf" value="{{ old('p_cpf') }}">
                             </div>
                         </div>
 
 
 
                         <div class="row mb-3">
-                            <label for="std_class" class="col-md-4 col-form-label text-md-end">{{ __('Turma do Aluno:') }}</label>
+                            <label for="p_hierarchy" class="col-md-4 col-form-label text-md-end">{{ __('Posição:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="std_class" type="text" class="form-control"
-                                        name="std_class" value="{{ old('std_class') }}">
+                                <input id="p_hierarchy" type="text" class="form-control"
+                                        name="p_hierarchy" value="{{ old('p_hierarchy') }}">
                             </div>
                         </div>
 
@@ -54,7 +54,7 @@
                                 </button>
 
 
-                                <a class="btn btn-link" href="{{ route('students.create') }}">
+                                <a class="btn btn-link" href="{{ route('principals.create') }}">
                                     {{ __('Cadastrar novo') }}
                                 </a>
                             </div>
@@ -68,7 +68,7 @@
                             <th scope="col"> </th>
                             <th scope="col">{{__("Name")}}</th>
                             <th scope="col">{{__("Cpf")}}</th>
-                            <th scope="col">{{__("Class")}}</th>
+                            <th scope="col">{{__("Position")}}</th>
                             <th scope="col"> </th>
                           </tr>
                         </thead>
@@ -76,15 +76,15 @@
                             @foreach ($list as $item)
                             <tr>
                                 <th scope="row">
-                                    <a href="{{route("students.edit",$item)}}" class="btn btn-primary">
+                                    <a href="{{route("principals.edit",$item)}}" class="btn btn-primary">
                                         {{ __('Edit') }}
                                     </a>
                                 </th>
-                                <td>{{$item->std_name}}</td>
-                                <td>{{$item->std_cpf}}</td>
-                                <td>{{$item->std_class}}</td>
+                                <td>{{$item->p_name}}</td>
+                                <td>{{$item->p_cpf}}</td>
+                                <td>{{$item->p_hierarchy}}</td>
                                 <td>
-                                    <form action="{{route('students.destroy',$item)}}" method="post">
+                                    <form action="{{route('principals.destroy',$item)}}" method="post">
                                         @csrf
                                         @method("DELETE")
                                         <button type="button" onclick="confirmDeleteModal(this)"  class="btn btn-danger">

@@ -8,15 +8,19 @@ use Illuminate\Support\Facades\Validator;
 
 class StudentsController extends Controller
 {
+        public function home(Students $students){
+          return view("admin.students.home");
+        }
+
         public function list(Request $request){
-            $pagination = Students::orderBy("name");
+            $pagination = Students::orderBy("std_name");
     
-            if (isset($request->name))
-                $pagination->where("name","like","%$request->name%");
-            if (isset($request->cpf))
-                $pagination->where("cpf","like","%$request->cpf%");
-            if (isset($request->class))
-                $pagination->where("class","like","%$request->class%");
+            if (isset($request->std_name))
+                $pagination->where("std_name","like","%$request->std_name%");
+            if (isset($request->std_cpf))
+                $pagination->where("std_cpf","like","%$request->std_cpf%");
+            if (isset($request->std_class))
+                $pagination->where("std_class","like","%$request->std_class%");
     
             #$pagination->dd();
             #$pagination->dump();
@@ -31,12 +35,12 @@ class StudentsController extends Controller
         public function validator(Request $request){
     
             $rules = [
-                'name' => 'required|max:250',
-                'cpf' => 'required|max:11',
-                'rg' => 'required|max:10',
-                'city' => 'required|max:60',
-                'address' => 'required|max:250',
-                'class' => 'required|max:50',
+                'std_name' => 'required|max:250',
+                'std_cpf' => 'required|max:11',
+                'std_rg' => 'required|max:10',
+                'std_city' => 'required|max:60',
+                'std_address' => 'required|max:250',
+                'std_class' => 'required|max:50',
             ];
     
             return Validator::make($request->all(), $rules);
@@ -70,6 +74,14 @@ class StudentsController extends Controller
             $students->update($data);
             return redirect()->back()->with("success",__("Data updated!"));
         }
+
+        public function school_grades(Students $students){
+            return view("admin.students.school_grades");
+          }
+
+        public function missing_school(Students $students){
+            return view("admin.students.missing_school");
+          }
     
            
 }

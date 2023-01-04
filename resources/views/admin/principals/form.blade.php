@@ -5,28 +5,28 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Alunos') }}</div>
+                <div class="card-header">{{ __('Diretores') }}</div>
 
                 <div class="card-body">
 
                     @if ($data->id == "")
-                        <form id="main" method="POST" action="{{ route('students.store') }}" enctype="multipart/form-data">
+                        <form id="main" method="POST" action="{{ route('principals.store') }}" enctype="multipart/form-data">
 
                     @else
-                        <form id="main" method="POST" action="{{ route('students.update',$data) }}" enctype="multipart/form-data">
+                        <form id="main" method="POST" action="{{ route('principals.update',$data) }}" enctype="multipart/form-data">
                         @method('PUT')
                     @endif
 
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="std_name" class="col-md-4 col-form-label text-md-end">{{ __('Nome do Aluno:') }}</label>
+                            <label for="p_name" class="col-md-4 col-form-label text-md-end">{{ __('Nome do Diretor:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="std_name" type="text" class="form-control @error('std_name') is-invalid @enderror"
-                                        name="std_name" value="{{ old('std_name', $data->std_name) }}"  autofocus>
+                                <input id="p_name" type="text" class="form-control @error('p_name') is-invalid @enderror"
+                                        name="p_name" value="{{ old('p_name', $data->p_name) }}"  autofocus>
 
-                                @error('std_name')
+                                @error('p_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -37,13 +37,13 @@
 
 
                         <div class="row mb-3">
-                            <label for="std_cpf" class="col-md-4 col-form-label text-md-end">{{ __('CPF do Aluno:') }}</label>
+                            <label for="p_cpf" class="col-md-4 col-form-label text-md-end">{{ __('CPF do Diretor:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="std_cpf" type="text" class="form-control @error('std_cpf') is-invalid @enderror"
-                                        name="std_cpf" value="{{ old('std_cpf', $data->std_cpf) }}"  autofocus>
+                                <input id="p_cpf" type="text" class="form-control @error('p_cpf') is-invalid @enderror"
+                                        name="p_cpf" value="{{ old('p_cpf', $data->p_cpf) }}"  autofocus>
 
-                                @error('std_cpf')
+                                @error('p_cpf')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -52,13 +52,13 @@
                             </div>
 
                         <div class="row mb-3">
-                            <label for="std_rg" class="col-md-4 col-form-label text-md-end">{{ __('RG do Aluno:') }}</label>
+                            <label for="p_rg" class="col-md-4 col-form-label text-md-end">{{ __('RG do Diretor:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="std_rg" type="text" class="form-control @error('std_rg') is-invalid @enderror"
-                                        name="std_rg" value="{{ old('std_rg', $data->std_rg) }}"  autofocus>
+                                <input id="p_rg" type="text" class="form-control @error('p_rg') is-invalid @enderror"
+                                        name="p_rg" value="{{ old('p_rg', $data->p_rg) }}"  autofocus>
 
-                                @error('std_rg')
+                                @error('p_rg')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -67,13 +67,13 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="std_city" class="col-md-4 col-form-label text-md-end">{{ __('Cidade:') }}</label>
+                            <label for="p_city" class="col-md-4 col-form-label text-md-end">{{ __('Cidade:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="std_city" type="text" class="form-control @error('std_city') is-invalid @enderror"
-                                        name="std_city" value="{{ old('std_city', $data->std_city) }}"  autofocus>
+                                <input id="p_city" type="text" class="form-control @error('p_city') is-invalid @enderror"
+                                        name="p_city" value="{{ old('p_city', $data->p_city) }}"  autofocus>
 
-                                @error('std_city')
+                                @error('p_city')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -82,13 +82,13 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="std_address" class="col-md-4 col-form-label text-md-end">{{ __('Endereço:') }}</label>
+                            <label for="p_address" class="col-md-4 col-form-label text-md-end">{{ __('Endereço:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="std_address" type="text" class="form-control @error('std_address') is-invalid @enderror"
-                                        name="std_address" value="{{ old('std_address', $data->std_address) }}"  autofocus>
+                                <input id="p_address" type="text" class="form-control @error('p_address') is-invalid @enderror"
+                                        name="p_address" value="{{ old('p_address', $data->p_address) }}"  autofocus>
 
-                                @error('std_address')
+                                @error('p_address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -107,13 +107,13 @@
 
 
                         <div class="row mb-3">
-                            <label for="std_class" class="col-md-4 col-form-label text-md-end">{{ __('Turma do Aluno:') }}</label>
+                            <label for="p_hierarchy" class="col-md-4 col-form-label text-md-end">{{ __('Posição do Diretor:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="std_class" type="text" class="form-control @error('std_class') is-invalid @enderror"
-                                        name="std_class" value="{{ old('std_class', $data->std_class) }}"  autofocus>
+                                <input id="p_hierarchy" type="text" class="form-control @error('p_hierarchy') is-invalid @enderror"
+                                        name="p_hierarchy" value="{{ old('p_hierarchy', $data->p_hierarchy) }}"  autofocus>
 
-                                @error('std_class')
+                                @error('p_hierarchy')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -128,13 +128,13 @@
                                     {{ __('Save') }}
                                 </button>
 
-                                <a class="btn btn-secondary" href='{{route("students.create")}}'>
-                                    {{ __('Novos Alunos') }}
+                                <a class="btn btn-secondary" href='{{route("principals.create")}}'>
+                                    {{ __('Novo Diretor') }}
                                 </a>
 
 
                                 @if ($data->id != "")
-                                <form name='delete' action="{{route('students.destroy',$data)}}"
+                                <form name='delete' action="{{route('principals.destroy',$data)}}"
                                     method="post"
                                     style='display: inline-block;'>
                                     @csrf

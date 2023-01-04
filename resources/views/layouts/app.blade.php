@@ -55,13 +55,16 @@
                             @endif
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('students.list') }}">{{ __('Alunos') }}</a>
+                            <a class="nav-link" href="{{ route('students.home') }}">{{ __('Alunos') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('teachers.list') }}">{{ __('Professores') }}</a>
+                            <a class="nav-link" href="{{ route('teachers.home') }}">{{ __('Professores') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('employees.list') }}">{{ __('Funcionários') }}</a>
+                            <a class="nav-link" href="{{ route('secretaries.home') }}">{{ __('Secretários') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('principals.home') }}">{{ __('Diretores') }}</a>
                         </li>
 
                             <li class="nav-item dropdown">

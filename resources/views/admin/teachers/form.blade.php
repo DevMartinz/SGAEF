@@ -20,13 +20,13 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nome do Professor:') }}</label>
+                            <label for="t_name" class="col-md-4 col-form-label text-md-end">{{ __('Nome do Professor:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="name" value="{{ old('name', $data->name) }}"  autofocus>
+                                <input id="t_name" type="text" class="form-control @error('t_name') is-invalid @enderror"
+                                        name="t_name" value="{{ old('t_name', $data->t_name) }}"  autofocus>
 
-                                @error('name')
+                                @error('t_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -37,13 +37,13 @@
 
 
                         <div class="row mb-3">
-                            <label for="cpf" class="col-md-4 col-form-label text-md-end">{{ __('CPF do Professor:') }}</label>
+                            <label for="t_cpf" class="col-md-4 col-form-label text-md-end">{{ __('CPF do Professor:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="cpf" value="{{ old('cpf', $data->cpf) }}"  autofocus>
+                                <input id="t_cpf" type="text" class="form-control @error('t_name') is-invalid @enderror"
+                                        name="t_cpf" value="{{ old('t_cpf', $data->t_cpf) }}"  autofocus>
 
-                                @error('cpf')
+                                @error('t_cpf')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -52,13 +52,13 @@
                             </div>
 
                         <div class="row mb-3">
-                            <label for="rg" class="col-md-4 col-form-label text-md-end">{{ __('RG do Professor:') }}</label>
+                            <label for="t_rg" class="col-md-4 col-form-label text-md-end">{{ __('RG do Professor:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="rg" type="text" class="form-control @error('rg') is-invalid @enderror"
-                                        name="rg" value="{{ old('rg', $data->rg) }}"  autofocus>
+                                <input id="t_rg" type="text" class="form-control @error('t_rg') is-invalid @enderror"
+                                        name="t_rg" value="{{ old('t_rg', $data->t_rg) }}"  autofocus>
 
-                                @error('rg')
+                                @error('t_rg')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -67,13 +67,13 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="city" class="col-md-4 col-form-label text-md-end">{{ __('Cidade:') }}</label>
+                            <label for="t_city" class="col-md-4 col-form-label text-md-end">{{ __('Cidade:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="city" type="text" class="form-control @error('city') is-invalid @enderror"
-                                        name="city" value="{{ old('city', $data->city) }}"  autofocus>
+                                <input id="t_city" type="text" class="form-control @error('t_city') is-invalid @enderror"
+                                        name="t_city" value="{{ old('t_city', $data->t_city) }}"  autofocus>
 
-                                @error('city')
+                                @error('t_city')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -82,13 +82,13 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Endereço:') }}</label>
+                            <label for="t_address" class="col-md-4 col-form-label text-md-end">{{ __('Endereço:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror"
-                                        name="address" value="{{ old('address', $data->address) }}"  autofocus>
+                                <input id="t_address" type="text" class="form-control @error('t_address') is-invalid @enderror"
+                                        name="t_address" value="{{ old('t_address', $data->t_address) }}"  autofocus>
 
-                                @error('address')
+                                @error('t_address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -107,13 +107,13 @@
 
 
                         <div class="row mb-3">
-                            <label for="s_subjects" class="col-md-4 col-form-label text-md-end">{{ __('Disciplina do Professor:') }}</label>
+                            <label for="t_s_subjects" class="col-md-4 col-form-label text-md-end">{{ __('Disciplina do Professor:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="s_subjects" type="text" class="form-control @error('class') is-invalid @enderror"
-                                        name="s_subjects" value="{{ old('s_subjects', $data->s_subjects) }}"  autofocus>
+                                <input id="t_s_subjects" type="text" class="form-control @error('t_s_subjects') is-invalid @enderror"
+                                        name="t_s_subjects" value="{{ old('t_s_subjects', $data->t_s_subjects) }}"  autofocus>
 
-                                @error('s_subjects')
+                                @error('t_s_subjects')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

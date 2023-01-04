@@ -11,12 +11,12 @@ class Students extends Model
 {
     use HasFactory, SoftDeletes;
     protected $fillable = [
-        "name",
-        "cpf",
-        "rg",
-        "city",
-        "address",
-        "class"
+        "std_name",
+        "std_cpf",
+        "std_rg",
+        "std_city",
+        "std_address",
+        "std_class"
 ];
 
 }
